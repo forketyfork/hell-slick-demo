@@ -53,8 +53,8 @@ object SlickDemo extends App {
   }
 
   // ещё парочка DBIO-действий...
-  val action3 = persons += (1, "Sergey")
-  val action4 = phones += (1, 1, "+1 (800) 555-3311")
+  val action3 = persons += (1, "Grace")
+  val action4 = phones += (1, 1, "+1 (800) FUC-KYOU")
 
   // делаем композитное действие из всех четырёх действий
   val compositeAction = for {

@@ -6,17 +6,17 @@ import scala.concurrent.{Await, Future}
 
 object FutureDemo extends App {
 
-  // первая фьюча формирует и возвращает строку
+  // первая футура формирует и возвращает строку
   def getFuture1 = Future {
     "1337"
   }
 
-  // вторая фьюча из строки делает число
+  // вторая футура из строки делает число
   def getFuture2(string: String) = Future {
     string.toInt
   }
 
-  // комбинированная фьюча, созданная с использованием for-включения
+  // комбинированная футура, созданная с использованием for-включения
   val composedFuture = for {
     result1 <- getFuture1
     result2 <- getFuture2(result1)
@@ -25,7 +25,7 @@ object FutureDemo extends App {
   println(Await.result(composedFuture, 1 second))
 
 
-  // комбинированная фьюча, созданная с использованием flatMap и map
+  // комбинированная футура, созданная с использованием flatMap и map
   val composedFuture2 = getFuture1.flatMap { string =>
     getFuture2(string).map { int =>
       int
