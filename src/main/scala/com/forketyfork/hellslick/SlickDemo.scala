@@ -64,10 +64,10 @@ object SlickDemo extends App {
     phoneCount <- action4
   } yield personCount + phoneCount
 
-  // заворачиваем композитное действие в транзакцию и делаем из него фьючу
+  // заворачиваем композитное действие в транзакцию и делаем из него футуру
   val actionFuture = db.run(compositeAction.transactionally)
 
-  // выполняем фьючу и выводим её результат — количество вставленных записей
+  // выполняем футуру и выводим её результат — количество вставленных записей
   val databaseFuture = for {
     i <- actionFuture
     _ <- Future {

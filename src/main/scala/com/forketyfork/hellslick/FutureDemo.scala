@@ -26,9 +26,9 @@ object FutureDemo extends App {
 
 
   // комбинированная футура, созданная с использованием flatMap и map
-  val composedFuture2 = getFuture1.flatMap { string =>
-    getFuture2(string).map { int =>
-      int
+  val composedFuture2 = getFuture1.flatMap { result1 =>
+    getFuture2(result1).map { result2 =>
+      result2
     }
   }
 
