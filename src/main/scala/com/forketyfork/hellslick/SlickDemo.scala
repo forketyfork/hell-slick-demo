@@ -31,7 +31,7 @@ object SlickDemo extends App {
   }
   val phones = TableQuery[Phones]
 
-  // Накатываем на таблицу схему БД
+  // Накатываем на БД схему
   val schemaCreateAction = (persons.schema ++ phones.schema).create
   Await.result(db.run(schemaCreateAction), 1 second)
 
